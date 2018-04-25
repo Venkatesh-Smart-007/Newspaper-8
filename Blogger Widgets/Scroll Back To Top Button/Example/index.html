@@ -1,0 +1,213 @@
+<html>
+<head>
+
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<style>
+.td-scroll-up {
+    cursor: pointer;
+    position: fixed;
+    bottom: 4px;
+    right: 5px;
+    width: 40px;
+    height: 40px;
+    background-color: #4db2ec;
+    z-index: 9999;
+    transform: translate3d(0, 70px, 0);
+    -webkit-transform: translate3d(0, 70px, 0);
+    -moz-transform: translate3d(0, 70px, 0);
+    -ms-transform: translate3d(0, 70px, 0);
+    -o-transform: translate3d(0, 70px, 0);
+    -webkit-transition: transform 0.4s cubic-bezier(0.55, 0, 0.1, 1) 0s;
+    -moz-transition: transform 0.4s cubic-bezier(0.55, 0, 0.1, 1) 0s;
+    -o-transition: transform 0.4s cubic-bezier(0.55, 0, 0.1, 1) 0s;
+    transition: transform 0.4s cubic-bezier(0.55, 0, 0.1, 1) 0s;
+}
+.td-scroll-up-visible {
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+}
+.td-scroll-up .td-icon-menu-up {
+    position: relative;
+    color: #fff;
+    font-size: 20px;
+    display: block;
+    text-align: center;
+    width: 40px;
+    top: 7px;
+}
+[class*="td-icon-"] {
+    line-height: 1;
+    text-align: center;
+    display: inline-block;
+}
+.td-icon-menu-up:before {
+    content: '\f077';
+}
+[class^="td-icon-"]:before, [class*=" td-icon-"]:before {
+    font-family: 'FontAwesome';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+@font-face {
+font-family: 'FontAwesome';
+src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.eot?v=4.7.0');
+src:url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'),url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'),url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'),url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0//fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'),url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
+font-weight: normal;
+font-style: normal;
+}
+</style>
+<link rel="stylesheet" href="https://assets-cdn.github.com/assets/github-0c21e211e4fd150ac107ccf0fcf751e5.css">
+</head>
+<body>
+<div class="td-scroll-up">
+  <i class="td-icon-menu-up"></i>
+</div>
+<script>
+// Back To Top
+$(function(){
+	$(document).on( 'scroll', function(){
+		if ($(window).scrollTop() > 400) {
+			$('.td-scroll-up').addClass('td-scroll-up-visible');
+		} else {
+			$('.td-scroll-up').removeClass('td-scroll-up-visible');
+		}
+	});
+	$('.td-scroll-up').on('click', scrollToTop);
+});
+function scrollToTop() {
+	verticalOffset = typeof(verticalOffset) != 'undefined' ? verticalOffset : 0;
+	element = $('body');
+	offset = element.offset();
+	offsetTop = offset.top;
+	$('html, body').animate({scrollTop: offsetTop}, 500, 'linear');
+}
+</script>
+<article class="markdown-body entry-content" itemprop="text">
+    <h1><a id="user-content-back-to-top-button" class="anchor" aria-hidden="true" href="#back-to-top-button"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Back To Top Button</h1>
+    <p>Floating 'Back To Top' or 'Scroll To Top' is a blogger Widget to add a button that appeares only when user's scroll down the Widget display Scroll To Top Button on the page. Hides when on top, scrolls up smoothly when clicked. This Widget fully enable it for everyone to see! This button is built on jQuery and is designed to be dead easy, without the need to modify any markup or the theme.</p>
+    <h2><a id="user-content-features" class="anchor" aria-hidden="true" href="#features"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Features</h2>
+    <ul>
+        <li>Hides when on top</li>
+        <li>Scrolls up smoothly when clicked</li>
+        <li>Latest Model</li>
+        <li>Font Awesome Supported</li>
+    </ul>
+    <h2><a id="user-content-how-to-use" class="anchor" aria-hidden="true" href="#how-to-use"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>How to use</h2>
+    <ol>
+        <li>Add this following code below to <code>&lt;body&gt;</code> Tag:</li>
+    </ol>
+    <div class="highlight highlight-text-html-basic">
+        <pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>td-scroll-up<span class="pl-pds">"</span></span>&gt;
+  &lt;<span class="pl-ent">i</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>td-icon-menu-up<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">i</span>&gt;
+&lt;/<span class="pl-ent">div</span>&gt;</pre>
+    </div>
+    <ol start="2">
+        <li>Add this JavaScript code above to <code>&lt;/head&gt;</code> Tag:</li>
+    </ol>
+    <div class="highlight highlight-source-js">
+        <pre><span class="pl-k">&lt;</span>script<span class="pl-k">&gt;</span>
+<span class="pl-c"><span class="pl-c">//</span> Back To Top</span>
+<span class="pl-en">$</span>(<span class="pl-k">function</span>(){
+	<span class="pl-en">$</span>(<span class="pl-c1">document</span>).<span class="pl-en">on</span>( <span class="pl-s"><span class="pl-pds">'</span>scroll<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(){
+		<span class="pl-k">if</span> (<span class="pl-en">$</span>(<span class="pl-c1">window</span>).<span class="pl-en">scrollTop</span>() <span class="pl-k">&gt;</span> <span class="pl-c1">400</span>) {
+			<span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">'</span>.td-scroll-up<span class="pl-pds">'</span></span>).<span class="pl-en">addClass</span>(<span class="pl-s"><span class="pl-pds">'</span>td-scroll-up-visible<span class="pl-pds">'</span></span>);
+		} <span class="pl-k">else</span> {
+			<span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">'</span>.td-scroll-up<span class="pl-pds">'</span></span>).<span class="pl-en">removeClass</span>(<span class="pl-s"><span class="pl-pds">'</span>td-scroll-up-visible<span class="pl-pds">'</span></span>);
+		}
+	});
+	<span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">'</span>.td-scroll-up<span class="pl-pds">'</span></span>).<span class="pl-en">on</span>(<span class="pl-s"><span class="pl-pds">'</span>click<span class="pl-pds">'</span></span>, scrollToTop);
+});
+<span class="pl-k">function</span> <span class="pl-en">scrollToTop</span>() {
+	verticalOffset <span class="pl-k">=</span> <span class="pl-k">typeof</span>(verticalOffset) <span class="pl-k">!=</span> <span class="pl-s"><span class="pl-pds">'</span>undefined<span class="pl-pds">'</span></span> <span class="pl-k">?</span> verticalOffset <span class="pl-k">:</span> <span class="pl-c1">0</span>;
+	element <span class="pl-k">=</span> <span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">'</span>body<span class="pl-pds">'</span></span>);
+	offset <span class="pl-k">=</span> <span class="pl-smi">element</span>.<span class="pl-en">offset</span>();
+	offsetTop <span class="pl-k">=</span> <span class="pl-smi">offset</span>.<span class="pl-c1">top</span>;
+	<span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">'</span>html, body<span class="pl-pds">'</span></span>).<span class="pl-c1">animate</span>({scrollTop<span class="pl-k">:</span> offsetTop}, <span class="pl-c1">500</span>, <span class="pl-s"><span class="pl-pds">'</span>linear<span class="pl-pds">'</span></span>);
+}
+<span class="pl-k">&lt;</span><span class="pl-k">/</span>script<span class="pl-k">&gt;</span>
+<span class="pl-k">&lt;</span>script src<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">'</span>https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js<span class="pl-pds">'</span></span><span class="pl-k">&gt;&lt;</span><span class="pl-k">/</span>script<span class="pl-k">&gt;</span></pre>
+    </div>
+    <ol start="3">
+        <li>Add this Css code above to <code>&lt;/head&gt;</code> Tag:</li>
+    </ol>
+    <div class="highlight highlight-source-css">
+        <pre>&lt;<span class="pl-ent">style</span><span class="pl-k">&gt;</span>
+<span class="pl-e">.td-scroll-up</span> {
+  <span class="pl-c1"><span class="pl-c1">cursor</span></span>: <span class="pl-c1">pointer</span>;
+  <span class="pl-c1"><span class="pl-c1">position</span></span>: <span class="pl-c1">fixed</span>;
+  <span class="pl-c1"><span class="pl-c1">bottom</span></span>: <span class="pl-c1">4<span class="pl-k">px</span></span>;
+  <span class="pl-c1"><span class="pl-c1">right</span></span>: <span class="pl-c1">5<span class="pl-k">px</span></span>;
+  <span class="pl-c1"><span class="pl-c1">width</span></span>: <span class="pl-c1">40<span class="pl-k">px</span></span>;
+  <span class="pl-c1"><span class="pl-c1">height</span></span>: <span class="pl-c1">40<span class="pl-k">px</span></span>;
+  <span class="pl-c1"><span class="pl-c1">background-color</span></span>: <span class="pl-c1">#4db2ec</span>;
+  <span class="pl-c1"><span class="pl-c1">z-index</span></span>: <span class="pl-c1">9999</span>;
+  <span class="pl-c1"><span class="pl-c1">transform</span></span>: <span class="pl-c1">translate3d</span>(<span class="pl-c1">0</span>, <span class="pl-c1">70<span class="pl-k">px</span></span>, <span class="pl-c1">0</span>);
+  <span class="pl-c1"><span class="pl-c1">-webkit-transform</span></span>: <span class="pl-c1">translate3d</span>(<span class="pl-c1">0</span>, <span class="pl-c1">70<span class="pl-k">px</span></span>, <span class="pl-c1">0</span>);
+  <span class="pl-c1"><span class="pl-c1">-moz-transform</span></span>: <span class="pl-c1">translate3d</span>(<span class="pl-c1">0</span>, <span class="pl-c1">70<span class="pl-k">px</span></span>, <span class="pl-c1">0</span>);
+  <span class="pl-c1"><span class="pl-c1">-ms-transform</span></span>: <span class="pl-c1">translate3d</span>(<span class="pl-c1">0</span>, <span class="pl-c1">70<span class="pl-k">px</span></span>, <span class="pl-c1">0</span>);
+  <span class="pl-c1"><span class="pl-c1">-o-transform</span></span>: <span class="pl-c1">translate3d</span>(<span class="pl-c1">0</span>, <span class="pl-c1">70<span class="pl-k">px</span></span>, <span class="pl-c1">0</span>);
+  <span class="pl-c1"><span class="pl-c1">-webkit-transition</span></span>: transform <span class="pl-c1">0.4<span class="pl-k">s</span></span> <span class="pl-c1">cubic-bezier</span>(<span class="pl-c1">0.55</span>, <span class="pl-c1">0</span>, <span class="pl-c1">0.1</span>, <span class="pl-c1">1</span>) <span class="pl-c1">0<span class="pl-k">s</span></span>;
+  <span class="pl-c1"><span class="pl-c1">-moz-transition</span></span>: transform <span class="pl-c1">0.4<span class="pl-k">s</span></span> <span class="pl-c1">cubic-bezier</span>(<span class="pl-c1">0.55</span>, <span class="pl-c1">0</span>, <span class="pl-c1">0.1</span>, <span class="pl-c1">1</span>) <span class="pl-c1">0<span class="pl-k">s</span></span>;
+  <span class="pl-c1"><span class="pl-c1">-o-transition</span></span>: transform <span class="pl-c1">0.4<span class="pl-k">s</span></span> <span class="pl-c1">cubic-bezier</span>(<span class="pl-c1">0.55</span>, <span class="pl-c1">0</span>, <span class="pl-c1">0.1</span>, <span class="pl-c1">1</span>) <span class="pl-c1">0<span class="pl-k">s</span></span>;
+  <span class="pl-c1"><span class="pl-c1">transition</span></span>: transform <span class="pl-c1">0.4<span class="pl-k">s</span></span> <span class="pl-c1">cubic-bezier</span>(<span class="pl-c1">0.55</span>, <span class="pl-c1">0</span>, <span class="pl-c1">0.1</span>, <span class="pl-c1">1</span>) <span class="pl-c1">0<span class="pl-k">s</span></span>;
+}
+<span class="pl-e">.td-scroll-up-visible</span> {
+  <span class="pl-c1"><span class="pl-c1">transform</span></span>: <span class="pl-c1">translate3d</span>(<span class="pl-c1">0</span>, <span class="pl-c1">0</span>, <span class="pl-c1">0</span>);
+  <span class="pl-c1"><span class="pl-c1">-webkit-transform</span></span>: <span class="pl-c1">translate3d</span>(<span class="pl-c1">0</span>, <span class="pl-c1">0</span>, <span class="pl-c1">0</span>);
+  <span class="pl-c1"><span class="pl-c1">-moz-transform</span></span>: <span class="pl-c1">translate3d</span>(<span class="pl-c1">0</span>, <span class="pl-c1">0</span>, <span class="pl-c1">0</span>);
+  <span class="pl-c1"><span class="pl-c1">-ms-transform</span></span>: <span class="pl-c1">translate3d</span>(<span class="pl-c1">0</span>, <span class="pl-c1">0</span>, <span class="pl-c1">0</span>);
+  <span class="pl-c1"><span class="pl-c1">-o-transform</span></span>: <span class="pl-c1">translate3d</span>(<span class="pl-c1">0</span>, <span class="pl-c1">0</span>, <span class="pl-c1">0</span>);
+}
+<span class="pl-e">.td-scroll-up</span> <span class="pl-e">.td-icon-menu-up</span> {
+  <span class="pl-c1"><span class="pl-c1">position</span></span>: <span class="pl-c1">relative</span>;
+  <span class="pl-c1"><span class="pl-c1">color</span></span>: <span class="pl-c1">#fff</span>;
+  <span class="pl-c1"><span class="pl-c1">font-size</span></span>: <span class="pl-c1">20<span class="pl-k">px</span></span>;
+  <span class="pl-c1"><span class="pl-c1">display</span></span>: <span class="pl-c1">block</span>;
+  <span class="pl-c1"><span class="pl-c1">text-align</span></span>: <span class="pl-c1">center</span>;
+  <span class="pl-c1"><span class="pl-c1">width</span></span>: <span class="pl-c1">40<span class="pl-k">px</span></span>;
+  <span class="pl-c1"><span class="pl-c1">top</span></span>: <span class="pl-c1">7<span class="pl-k">px</span></span>;
+}
+[<span class="pl-e">class</span><span class="pl-k">*=</span><span class="pl-s"><span class="pl-pds">"</span>td-icon-<span class="pl-pds">"</span></span>] {
+  <span class="pl-c1"><span class="pl-c1">line-height</span></span>: <span class="pl-c1">1</span>;
+  <span class="pl-c1"><span class="pl-c1">text-align</span></span>: <span class="pl-c1">center</span>;
+  <span class="pl-c1"><span class="pl-c1">display</span></span>: <span class="pl-c1">inline-block</span>;
+}
+<span class="pl-e">.td-icon-menu-up</span><span class="pl-e">:before</span> {
+  <span class="pl-c1"><span class="pl-c1">content</span></span>: <span class="pl-s"><span class="pl-pds">'</span><span class="pl-cce">\f077</span><span class="pl-pds">'</span></span>;
+}
+[<span class="pl-e">class</span><span class="pl-k">^=</span><span class="pl-s"><span class="pl-pds">"</span>td-icon-<span class="pl-pds">"</span></span>]<span class="pl-e">:before</span>, [<span class="pl-e">class</span><span class="pl-k">*=</span><span class="pl-s"><span class="pl-pds">"</span> td-icon-<span class="pl-pds">"</span></span>]<span class="pl-e">:before</span> {
+  <span class="pl-c1"><span class="pl-c1">font-family</span></span>: <span class="pl-s"><span class="pl-pds">'</span>FontAwesome<span class="pl-pds">'</span></span>;
+  <span class="pl-c1"><span class="pl-c1">speak</span></span>: <span class="pl-c1">none</span>;
+  <span class="pl-c1"><span class="pl-c1">font-style</span></span>: <span class="pl-c1">normal</span>;
+  <span class="pl-c1"><span class="pl-c1">font-weight</span></span>: <span class="pl-c1">normal</span>;
+  <span class="pl-c1"><span class="pl-c1">font-variant</span></span>: <span class="pl-c1">normal</span>;
+  <span class="pl-c1"><span class="pl-c1">text-transform</span></span>: <span class="pl-c1">none</span>;
+  <span class="pl-c1"><span class="pl-c1">text-align</span></span>: <span class="pl-c1">center</span>;
+  <span class="pl-c1"><span class="pl-c1">-webkit-font-smoothing</span></span>: <span class="pl-c1">antialiased</span>;
+  <span class="pl-c1"><span class="pl-c1">-moz-osx-font-smoothing</span></span>: <span class="pl-c1">grayscale</span>;
+}
+<span class="pl-k">@font-face</span> {
+<span class="pl-c1"><span class="pl-c1">font-family</span></span>: <span class="pl-s"><span class="pl-pds">'</span>FontAwesome<span class="pl-pds">'</span></span>;
+<span class="pl-c1"><span class="pl-c1">src</span></span>: <span class="pl-c1">url</span>(<span class="pl-s"><span class="pl-pds">'</span>https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.eot?v=4.7.0<span class="pl-pds">'</span></span>);
+<span class="pl-c1"><span class="pl-c1">src</span></span>:<span class="pl-c1">url</span>(<span class="pl-s"><span class="pl-pds">'</span>https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.eot?#iefix&amp;v=4.7.0<span class="pl-pds">'</span></span>) <span class="pl-c1">format</span>(<span class="pl-s"><span class="pl-pds">'</span>embedded-opentype<span class="pl-pds">'</span></span>),<span class="pl-c1">url</span>(<span class="pl-s"><span class="pl-pds">'</span>https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0<span class="pl-pds">'</span></span>) <span class="pl-c1">format</span>(<span class="pl-s"><span class="pl-pds">'</span>woff2<span class="pl-pds">'</span></span>),<span class="pl-c1">url</span>(<span class="pl-s"><span class="pl-pds">'</span>https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.woff?v=4.7.0<span class="pl-pds">'</span></span>) <span class="pl-c1">format</span>(<span class="pl-s"><span class="pl-pds">'</span>woff<span class="pl-pds">'</span></span>),<span class="pl-c1">url</span>(<span class="pl-s"><span class="pl-pds">'</span>https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0//fonts/fontawesome-webfont.ttf?v=4.7.0<span class="pl-pds">'</span></span>) <span class="pl-c1">format</span>(<span class="pl-s"><span class="pl-pds">'</span>truetype<span class="pl-pds">'</span></span>),<span class="pl-c1">url</span>(<span class="pl-s"><span class="pl-pds">'</span>https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular<span class="pl-pds">'</span></span>) <span class="pl-c1">format</span>(<span class="pl-s"><span class="pl-pds">'</span>svg<span class="pl-pds">'</span></span>);
+<span class="pl-c1"><span class="pl-c1">font-weight</span></span>: <span class="pl-c1">normal</span>;
+<span class="pl-c1"><span class="pl-c1">font-style</span></span>: <span class="pl-c1">normal</span>;
+&lt;/<span class="pl-c1"><span class="pl-c1">style</span></span>&gt;</pre>
+    </div>
+    <h2><a id="user-content-license" class="anchor" aria-hidden="true" href="#license"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>License</h2>
+    <p>MIT, see <a href="https://github.com/Venkatesh-Smart-007/Newspaper-8/blob/master/LICENSE">LICENSE</a></p>
+    <p>Font Awesome, see <a href="https://fontawesome.com/license" rel="nofollow">LICENSE</a></p>
+    <hr>
+    <h2><a id="user-content-support-me-with-a-star" class="anchor" aria-hidden="true" href="#support-me-with-a-star"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Support me with a star</h2>
+</article>
+</body>
+</html>
