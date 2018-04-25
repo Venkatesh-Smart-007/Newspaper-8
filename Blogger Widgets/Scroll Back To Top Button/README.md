@@ -107,7 +107,7 @@ src:url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawe
 font-weight: normal;
 font-style: normal;
 </style>
-    ```
+```
 ## License
 
 MIT, see [LICENSE](https://github.com/Venkatesh-Smart-007/Newspaper-8/blob/master/LICENSE)
@@ -117,4 +117,4 @@ Font Awesome, see [LICENSE](https://fontawesome.com/license)
 ----------
 
 
-[Support me with a star](https://github.com/vfeskov/vanilla-back-to-top)
+##Support me with a star
