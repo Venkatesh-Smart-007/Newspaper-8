@@ -108,3 +108,13 @@ font-weight: normal;
 font-style: normal;
 </style>
     ```
+## License
+
+MIT, see [LICENSE](https://github.com/Venkatesh-Smart-007/Newspaper-8/blob/master/LICENSE)
+
+Font Awesome, see [LICENSE](https://fontawesome.com/license)
+
+----------
+
+
+[Support me with a star](https://github.com/vfeskov/vanilla-back-to-top)
