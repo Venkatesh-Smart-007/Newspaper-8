@@ -18,7 +18,7 @@ Floating 'Back To Top' or 'Scroll To Top' is a blogger Widget to add a button th
 </div>
 ```
 
-2. Add this JavaScript code above to `</head>` Tag:
+2. Add this JavaScript code above to `</body>` Tag:
 ```js
 <script>
 // Back To Top
