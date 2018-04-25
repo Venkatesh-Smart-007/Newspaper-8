@@ -1,0 +1,54 @@
+.td-scroll-up {
+    cursor: pointer;
+    position: fixed;
+    bottom: 4px;
+    right: 5px;
+    width: 40px;
+    height: 40px;
+    background-color: #4db2ec;
+    z-index: 9999;
+    transform: translate3d(0, 70px, 0);
+    -webkit-transform: translate3d(0, 70px, 0);
+    -moz-transform: translate3d(0, 70px, 0);
+    -ms-transform: translate3d(0, 70px, 0);
+    -o-transform: translate3d(0, 70px, 0);
+    -webkit-transition: transform 0.4s cubic-bezier(0.55, 0, 0.1, 1) 0s;
+    -moz-transition: transform 0.4s cubic-bezier(0.55, 0, 0.1, 1) 0s;
+    -o-transition: transform 0.4s cubic-bezier(0.55, 0, 0.1, 1) 0s;
+    transition: transform 0.4s cubic-bezier(0.55, 0, 0.1, 1) 0s;
+}
+.td-scroll-up-visible {
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+}
+.td-scroll-up .td-icon-menu-up {
+    position: relative;
+    color: #fff;
+    font-size: 20px;
+    display: block;
+    text-align: center;
+    width: 40px;
+    top: 7px;
+}
+[class*="td-icon-"] {
+    line-height: 1;
+    text-align: center;
+    display: inline-block;
+}
+.td-icon-menu-up:before {
+    content: '\f077';
+}
+[class^="td-icon-"]:before, [class*=" td-icon-"]:before {
+    font-family: 'FontAwesome';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
